@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>About Us - NetGuardAi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #0f172a;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <!-- Network Animation Canvas -->
+    <canvas id="network-canvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo" onclick="window.location.href='index.html'">
+            <div class="logo-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+            </div>
+            <div class="logo-text">NetGuardAi</div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button class="nav-btn secondary" onclick="window.location.href='about.html'">About Us</button>
+            <button class="nav-btn secondary" onclick="window.location.href='login.html'">Login</button>
+            <button class="nav-btn primary" onclick="window.location.href='signup.html'">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content3">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Revolutionizing Network Security Management</h1>
+                <p>SecureNet combines advanced AI technology with industry-leading network security expertise to provide intelligent, automated solutions for your network infrastructure.</p>
+            </div>
+        </section>
+
+        <!-- Vendor Section -->
+        <section class="vendors">
+            <h2 class="section-title">Our Trusted Vendors</h2>
+            <div class="vendor-grid">
+                <div class="vendor-card">
+                    <img src="C:\Users\eloma\OneDrive\Desktop\Grad Project\Frontend\public\images\cisco.png" alt="Cisco" class="vendor-logo">
+                    <h3 class="vendor-name">Cisco</h3>
+                    <p class="vendor-description">Industry leader in networking equipment and enterprise security solutions.</p>
+                </div>
+                <div class="vendor-card">
+                    <img src="C:\Users\eloma\OneDrive\Desktop\Grad Project\Frontend\public\images\fortinet.png" alt="Fortinet" class="vendor-logo">
+                    <h3 class="vendor-name">Fortinet</h3>
+                    <p class="vendor-description">Comprehensive security solutions with advanced threat protection.</p>
+                </div>
+                <div class="vendor-card">
+                    <img src="C:\Users\eloma\OneDrive\Desktop\Grad Project\Frontend\public\images\F5.png" alt="F5" class="vendor-logo">
+                    <h3 class="vendor-name">F5</h3>
+                    <p class="vendor-description">Application delivery and security services for enterprise applications.</p>
+                </div>
+                <div class="vendor-card">
+                    <img src="C:\Users\eloma\OneDrive\Desktop\Grad Project\Frontend\public\images\juniper.png" alt="Juniper Networks" class="vendor-logo">
+                    <h3 class="vendor-name">Juniper Networks</h3>
+                    <p class="vendor-description">High-performance networking and security solutions.</p>
+                </div>
+                <div class="vendor-card">
+                    <img src="C:\Users\eloma\OneDrive\Desktop\Grad Project\Frontend\public\images\palo alto.png" alt="Palo Alto Networks" class="vendor-logo">
+                    <h3 class="vendor-name">Palo Alto Networks</h3>
+                    <p class="vendor-description">Next-generation security platforms and cloud-based security solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Offerings Section -->
+        <section class="offerings">
+            <h2 class="section-title">What Our Platform Offers</h2>
+            <div class="offerings-container">
+                <div class="offerings-grid">
+                    <div class="offering-card">
+                        <div class="offering-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                        </div>
+                        <h3 class="offering-title">Comprehensive Security Management</h3>
+                        <p class="offering-description">
+                            Manage your entire network security infrastructure from a single, intuitive dashboard.
+                        </p>
+                        <ul class="offering-list">
+                            <li>
+                                <div class="offering-list-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                Unified configuration management
+                            </li>
+                            <li>
+                                <div class="offering-list-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                Real-time security monitoring
+                            </li>
+                            <li>
+                                <div class="offering-list-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                Automated compliance reporting
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="offering-card">
+                        <div class="offering-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h3 class="offering-title">Multi-Vendor Integration</h3>
+                        <p class="offering-description">
+                            Seamlessly integrate with all major network security vendors to provide a unified security approach.
+                        </p>
+                        <ul class="offering-list">
+                            <li>
+                                <div class="offering-list-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                Support for Cisco, Fortinet, F5, Juniper, and Palo Alto
+                            </li>
+                            <li>
+                                <div class="offering-list-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                Cross-platform security policy management
+                            </li>
+                            <li>
+                                <div class="offering-list-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                Vendor-specific configuration templates
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="offering-card">
+                        <div class="offering-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <h3 class="offering-title">Intelligent Security Automation</h3>
+                        <p class="offering-description">
+                            Leverage AI-driven automation to enhance your security posture and reduce manual configuration errors.
+                        </p>
+                        <ul class="offering-list">
+                            <li>
+                                <div class="offering-list-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                Automated security policy deployment
+                            </li>
+                            <li>
+                                <div class="offering-list-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                Proactive vulnerability detection
+                            </li>
+                            <li>
+                                <div class="offering-list-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                Continuous security posture assessment
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Secure Your Network?</h2>
+                <p class="cta-description">Join organizations using SecureNet to manage their network security efficiently.</p>
+                <a href="signup.html" class="cta-button">Get Started Today</a>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
