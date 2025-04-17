@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:5000"; // Backend URL
+const apiUrl = "https://netguardai-backend.onrender.com"; // ✅ Your live backend URL
 
 //
 // Password Strength Checker
