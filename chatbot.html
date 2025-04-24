@@ -5,203 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Chatbot - NetGuardAi</title>
-    <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-  body {
-    min-height: 100vh;
-    background-color: #0f172a;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-  }
+        body {
+            min-height: 100vh;
+            background-color: #0f172a;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
 
-  /* Navigation Bar Styles */
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 5%;
-    background-color: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  }
+        /* Navigation Bar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        }
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-  }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
 
-  .logo-icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
-  }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
 
-  .logo-text {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 0.5px;
-  }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
 
-  .nav-buttons {
-    display: flex;
-    gap: 1rem;
-  }
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
 
-  .nav-btn {
-    padding: 0.6rem 1.2rem;
-    border-radius: 50px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    outline: none;
-  }
+        .nav-btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+        }
 
-  .nav-btn.primary {
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    color: white;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-  }
+        .nav-btn.primary {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
 
-  .nav-btn.primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
-  }
+        .nav-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+        }
 
-  .nav-btn.secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
+        .nav-btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-  .nav-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
-  }
+        .nav-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
 
-  .nav-btn.danger {
-    background: rgba(239, 68, 68, 0.2);
-    color: white;
-    border: 1px solid rgba(239, 68, 68, 0.3);
-  }
+        .nav-btn.danger {
+            background: rgba(239, 68, 68, 0.2);
+            color: white;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
 
-  .nav-btn.danger:hover {
-    background: rgba(239, 68, 68, 0.3);
-    transform: translateY(-2px);
-  }
+        .nav-btn.danger:hover {
+            background: rgba(239, 68, 68, 0.3);
+            transform: translateY(-2px);
+        }
 
-  .mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  /* Chat Input */
-  .chat-input {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 1rem;
-    background-color: #1e293b;
-    border-top: 1px solid #334155;
-    flex-wrap: wrap;
-  }
-
-  .chat-input input {
-    flex: 1;
-    padding: 0.7rem 1rem;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    background-color: #0f172a;
-    color: white;
-  }
-
-  .send-btn {
-    padding: 0.7rem 1.2rem;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    color: white;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    cursor: pointer;
-    transition: 0.2s ease;
-  }
-
-  /* Generate Report Container */
-  .generate-report-container {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  @media (max-width: 768px) {
-    .nav-buttons {
-      display: none;
-      flex-direction: column;
-      background-color: #0f172a;
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-      z-index: 1001;
-    }
-
-    .nav-buttons.show {
-      display: flex;
-    }
-
-    .mobile-menu-btn {
-      display: block;
-    }
-
-    .chat-input {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .chat-input input {
-      width: 100%;
-    }
-
-    .chat-input .send-btn {
-      width: 100%;
-    }
-
-    .generate-report-container {
-      width: 100%;
-      justify-content: center;
-      margin-top: 10px;
-    }
-
-    #generate-report-btn {
-      width: 100%;
-      max-width: 300px;
-    }
-  }
+         .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+          }
+        
+          @media (max-width: 768px) {
+            .nav-buttons {
+              display: none;
+              flex-direction: column;
+              background-color: #0f172a;
+              position: absolute;
+              top: 70px;
+              right: 20px;
+              padding: 1rem;
+              border-radius: 10px;
+              box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+              z-index: 1001;
+            } 
+        
+        .nav-buttons.show {
+              display: flex;
+            }
+        
+            .mobile-menu-btn {
+              display: block;
+            }
+          }   
 </style>
 </head>
 <body>
