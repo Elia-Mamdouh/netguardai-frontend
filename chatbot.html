@@ -110,6 +110,36 @@
             background: rgba(239, 68, 68, 0.3);
             transform: translateY(-2px);
         }
+
+          .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .nav-buttons {
+      display: none;
+      flex-direction: column;
+      background-color: #0f172a;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1001;
+    }
+
+    .nav-buttons.show {
+      display: flex;
+    }
+
+    .mobile-menu-btn {
+      display: block;
+    }
+  }
     </style>
 </head>
 <body>
@@ -131,6 +161,13 @@
             <button class="nav-btn secondary" onclick="window.location.href='about.html'">About Us</button>
             <button class="nav-btn danger" onclick="logout()">Logout</button>
         </div>
+          <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
     </nav>
 
     <!-- Main Content -->
@@ -165,6 +202,14 @@
         </div>
     </div>
     <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.querySelector(".mobile-menu-btn");
+    const navButtons = document.querySelector(".nav-buttons");
+
+    menuBtn.addEventListener("click", () => {
+      navButtons.classList.toggle("show");
+    });
+  });
         document.addEventListener('DOMContentLoaded', function () {
   const canvas = document.getElementById('network-canvas');
   if (!canvas) return; // Stop if canvas doesn't exist on the page
