@@ -12,6 +12,12 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        
+        @media (max-width: 768px) {
+            .nav-buttons {
+                display: none;
+            }
+        }
 
         body {
             min-height: 100vh;
@@ -22,6 +28,25 @@
         }
     </style>
 </head>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navButtons = document.querySelector('.nav-buttons');
+
+        menuBtn.addEventListener('click', () => {
+            const isShown = navButtons.style.display === 'flex';
+            navButtons.style.display = isShown ? 'none' : 'flex';
+            navButtons.style.flexDirection = 'column';
+            navButtons.style.position = 'absolute';
+            navButtons.style.top = '60px';
+            navButtons.style.right = '20px';
+            navButtons.style.backgroundColor = '#0f172a';
+            navButtons.style.padding = '1rem';
+            navButtons.style.borderRadius = '10px';
+            navButtons.style.gap = '10px';
+        });
+    });
+</script>
 <body>
     <!-- Network Animation Canvas -->
     <canvas id="network-canvas"></canvas>
