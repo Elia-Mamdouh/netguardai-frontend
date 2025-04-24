@@ -407,6 +407,13 @@ function logout() {
   window.location.href = "index.html";
 }
 
+  const mobileBtn = document.querySelector(".mobile-menu-btn");
+  const mobileMenu = document.querySelector(".mobile-menu");
+
+  mobileBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
  // Network Animation
  document.addEventListener('DOMContentLoaded', function() {
   const canvas = document.getElementById('network-canvas');
