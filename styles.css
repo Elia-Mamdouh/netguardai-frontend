@@ -13,25 +13,6 @@
     min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
-
-.mobile-menu {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  background: rgba(15, 23, 42, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 10px;
-  z-index: 1001;
-  gap: 0.5rem;
-}
-
-.mobile-menu.hidden {
-  display: none;
-}
-
   
   .navbar {
     position: fixed;
