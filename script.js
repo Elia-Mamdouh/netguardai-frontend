@@ -498,6 +498,18 @@ function logout() {
           ctx.fill();
       }
   }
+   
+  // Toggle mobile menu
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector(".mobile-menu-btn");
+  const navButtons = document.querySelector(".nav-buttons");
+
+  if (menuBtn && navButtons) {
+    menuBtn.addEventListener("click", () => {
+      navButtons.classList.toggle("show");
+    });
+  }
+});
   
   // Create data packets
   const packets = [];
