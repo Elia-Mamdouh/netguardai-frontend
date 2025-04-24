@@ -118,28 +118,35 @@
     cursor: pointer;
   }
 
-  @media (max-width: 768px) {
-    .nav-buttons {
-      display: none;
-      flex-direction: column;
-      background-color: #0f172a;
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-      z-index: 1001;
-    } 
+ /* --- mobile overrides for chat controls & Generate button --- */
+@media (max-width:768px){
+  /* burger menu (already present, keep) */
+  .nav-buttons{
+    display:none; flex-direction:column;
+    background:#0f172a; position:absolute; top:70px; right:20px;
+    padding:1rem; border-radius:10px; box-shadow:0 5px 10px rgba(0,0,0,.3);
+    z-index:1001;
+  }
+  .nav-buttons.show{display:flex;}
+  .mobile-menu-btn{display:block;}
 
-.nav-buttons.show {
-      display: flex;
-    }
+  /* chat input column layout */
+  .chat-input{flex-direction:column; align-items:stretch;}
+  .chat-input input{width:100%;}
+  .chat-input .send-btn      {width:48%;}
+  .chat-input .new-chat-btn  {width:48%;}
 
-    .mobile-menu-btn {
-      display: block;
-    }
-  }    
+  /* Generate Report full-width under the two buttons */
+  .generate-report-container{
+    width:100%;               /* takes full row */
+    justify-content:center;   /* center the button */
+    margin-top:10px;          /* space below chat buttons */
+  }
+  #generate-report-btn{
+    width:100%;
+    max-width:300px;          /* optional limit */
+  }
+} 
 </style>
 </head>
 <body>
@@ -182,11 +189,7 @@
                 <div class="chat-header-text">
                     <div class="chat-header-title">Network Security Assistant</div>
                     <div class="chat-header-subtitle">Ask me about network security configurations</div>
-                </div>
-                <!-- Generate Report Button -->
-                <div class="generate-report-container">
-                    <button class="nav-btn primary" id="generate-report-btn" onclick="generateReport()">Generate Report</button>
-                </div>                
+                </div>               
             </div>
             
             <div id="chatbox">
@@ -198,7 +201,11 @@
                 <input type="text" id="user-input" placeholder="Type your message..." onkeypress="if(event.key === 'Enter') sendMessage()">
                 <button class="send-btn" onclick="sendMessage()">Send</button>
                 <button class="send-btn new-chat-btn" onclick="startNewChat()">Start New Chat</button>
-            </div>            
+            </div>  
+            
+            <div class="generate-report-container">
+                    <button class="nav-btn primary" id="generate-report-btn" onclick="generateReport()">Generate Report</button>
+            </div> 
         </div>
     </div>
     <script>
