@@ -189,6 +189,44 @@ margin-left: auto;
         font-size: 0.8rem;
     }
 }
+.chat-input {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #1e293b;
+    border-top: 1px solid #334155;
+}
+
+.chat-input input {
+    padding: 0.6rem 1rem;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    margin-bottom: 0.5rem;
+    background-color: #0f172a;
+    color: #fff;
+    font-size: 0.95rem;
+}
+.send-btn {
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.send-btn:hover {
+    transform: translateY(-2px);
+}
+
+.new-chat-btn {
+    background: linear-gradient(to right, #6366f1, #a78bfa);
+}
 </style>
 </head>
 <body>
